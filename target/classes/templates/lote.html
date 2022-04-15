@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lote bodega</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-table.css">
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	
+</head>
+<body>
+
+<div class="container-fluid">
+		<div th:replace="fragments/tables-manager :: tables-manager-lote"></div>
+		<div th:replace="fragments/tables-manager :: tables-manager-menu"></div>
+		<h2>Lote</h2>
+
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary" onClick="add()">+</button>
+		</div>
+
+		<div class="table-responsive" id="tableDivContainer">
+			<table class="table table-condensed" id="loteTable"
+				data-toggle="table">
+				<thead>
+					<tr>
+						<th data-field="idInvent">Nº</th>
+						<th data-field="lote">Lote</th>
+						<th data-field="stockCant">Stock</th>
+						<th data-field="fechaIngreso">Fecha ingreso</th>
+						<th data-field="fechaCaducidad">Fecha Caducidad</th>
+						<th data-field="idProd">ID Producto</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Lote</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="usr">Número</label>
+						<input type="text"	class="form-control" id="id_invent">
+						
+						<label for="pwd">Lote</label>
+						<input type="text" class="form-control" id="lote">
+						
+						<label for="pwd">Stock</label>
+						<input type="text" class="form-control" id="stock_cant">
+						
+						<label for="pwd">Fecha Ingreso del Producto</label>
+						<input type="text" class="form-control" id="fecha_ingreso">
+						
+						<label for="pwd">Fecha Caducidad del Procuto</label>
+						<input type="text" class="form-control" id="fecha_caducidad">
+						
+						<label for="pwd">ID Producto</label>
+						<input type="text" class="form-control" id="id_prod">
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<div class="btn-group" id="btn_group_new">
+						<button type="button" class="btn btn-primary" onClick="insert()">Save</button>
+					</div>
+					
+					<div class="btn-group" id="btn_group_old">
+						<button type="button" class="btn btn-primary" onClick="update()">Save</button>
+						<button type="button" class="btn btn-primary" onClick="del()">Delete</button>
+					</div>
+					<div class="btn-group" id="btn_group_close">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+				list();
+			});
+			
+		</script>
+
+		<script src="/js/jquery-3.6.0.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/bootstrap-table.js"></script>
+		<script src="/js/lote.js"></script>
+</body>
+</html>

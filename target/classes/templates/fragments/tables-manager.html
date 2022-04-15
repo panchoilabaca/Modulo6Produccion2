@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="jumbotron" th:fragment="tables-manager-movimiento">
+		<h1>Mantenedor de Bodega</h1>
+
+	</div>
+
+	<div class="jumbotron" th:fragment="tables-manager-empleado"></div>
+	<div class="jumbotron" th:fragment="tables-manager-producto"></div>
+    <div class="jumbotron" th:fragment="tables-manager-lote"></div>
+    
+		
+
+
+
+
+	<div class="btn-group" th:fragment="tables-manager-menu">
+		<button type="button" class="btn btn-primary"
+			onClick="location.href = 'movimiento_page'">MOVIMIENTO</button>
+			
+			
+			<button type="button" class="btn btn-primary"
+			onClick="location.href = 'empleado_page'">EMPLEADO</button>
+			
+			
+		<button type="button" class="btn btn-primary"
+			onClick="location.href = 'producto_page'">PRODUCTO</button>
+			
+			
+			<button type="button" class="btn btn-primary"
+			onClick="location.href = 'lote_page'">LOTE</button>
+
+	</div>
+</body>
+</html>
